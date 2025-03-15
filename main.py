@@ -23,3 +23,8 @@ def get_task_by_id(task_id: int) -> Dict[str, str] | str:
     if task_id >= len(items):
         return {"Message": f"An item with id {task_id} not found"}
     return items[task_id]
+
+
+@app.get("/tasks")
+def get_all_tasks() -> List[str]:
+    return items
